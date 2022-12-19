@@ -5,6 +5,9 @@ export class Cuenta{
    
 
     constructor(cliente,numero, agencia,saldo){
+        if( this.constructor == Cuenta){// esto se llama metodo en clase "abstractas"
+            throw new Error("No se debe instanciar objetos de la clase cuenta") // se utiliza "throw new Error" para decirle a js que no esta permitido el acceso
+        }
         this.numero =numero;
         this.agencia = agencia;
         this.#cliente = cliente;
@@ -29,7 +32,8 @@ export class Cuenta{
     }
 
     retirarDeCuenta(valor,comision) {
-        _retirarDeCuenta(valor,0)
+        // metodo abstracto
+        throw new Error("se debe implementar el metodo en su clase corrspondiente")
     }
     _retirarDeCuenta(valor,comision) {
         valor = valor * (1+comision/100);
