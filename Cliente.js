@@ -4,6 +4,7 @@ export class Cliente
     dniCliente;
     rutCliente;
     #clave
+  //autenticable;
 
     constructor(nombreCliente, dniCliente, rutCliente) {
         this.nombreCliente = nombreCliente;
@@ -15,5 +16,6 @@ export class Cliente
         this.#clave = clave;
     }
     autenticable(){
-        return false;
+        return true;
+    }
 }
